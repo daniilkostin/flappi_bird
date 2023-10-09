@@ -1,4 +1,3 @@
-# Import module
 import random
 import sys
 import pygame
@@ -13,10 +12,10 @@ window = pygame.display.set_mode((window_width, window_height))
 elevation = window_height * 0.8
 game_images = {}
 framepersecond = 32
-pipeimage = 'images/pipe.png'
-background_image = 'images/background.jpg'
-birdplayer_image = 'images/bird.png'
-sealevel_image = 'images/base.png'
+pipeimage = ('pipe.png')
+background_image = ('background.png')
+birdplayer_image = ('bird.png')
+sealevel_image = ('base.png')
 
 
 def flappygame():
@@ -192,9 +191,12 @@ if __name__ == "__main__":
 	game_images['scoreimages'] = (
 		pygame.image.load('bird.png').convert_alpha(),
 		pygame.image.load('pipe.png').convert_alpha(),
+		pygame.image.load('background.png').convert_alpha(),
+		pygame.image.load('base.png').convert_alpha(),
 	)
-	game_images['flappybird'] = pygame.image.load(
-		birdplayer_image).convert_alpha()
+	
+	
+	game_images['flappybird'] = pygame.image.load(birdplayer_image).convert_alpha()
 	game_images['sea_level'] = pygame.image.load(
 		sealevel_image).convert_alpha()
 	game_images['background'] = pygame.image.load(
@@ -229,7 +231,7 @@ if __name__ == "__main__":
 				# up key, start the game for them
 				elif event.type == KEYDOWN and (event.key == K_SPACE or\
 												event.key == K_UP):
-					flappygame()
+												flappygame()
 
 				# if user doesn't press anykey Nothing happen
 				else:
